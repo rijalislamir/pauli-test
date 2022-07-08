@@ -44,8 +44,8 @@ const Result = props => {
         <div className='fixed bg-blue-200 top-0 right-0 bottom-0 left-0 flex flex-col justify-center items-center'>
             <h1 className="mb-8 text-6xl">Times Up!</h1>
             <p className='mb-3'>Total: {total} | Correct: {correct} | Wrong: {wrong}</p>
-            <div className='flex justify-center overflow-x-auto scroll-smooth w-4/5'>
-                <table className='border-separate border-spacing-0 border-y-2 border-black'>
+            <div className='overflow-x-auto scroll-smooth w-4/5'>
+                <table className='border-separate border-spacing-0 border-y-2 border-black mx-auto'>
                     <thead>
                         <tr>
                             <th className="sticky border-x-2 border-black left-0 w-32 h-12 bg-white px-4 py-2">No.</th>
