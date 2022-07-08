@@ -3,13 +3,15 @@ import { createSlice } from "@reduxjs/toolkit";
 const dataSlice = createSlice({
     name: "data",
     initialState: {
+        startTime: null,
         num1: Math.floor(Math.random() * 10),
         num2: Math.floor(Math.random() * 10),
         history: [],
         limit: null
     },
     reducers: {
-        setTimer(state, action) {
+        startTest(state, action) {
+            state.startTime = +new Date()
             state.limit = 1000 * 60 * action.payload.minutes
         },
         numpadPressed(state, action) {
@@ -24,12 +26,20 @@ const dataSlice = createSlice({
             state.num1 = state.num2
 
             state.num2 = Math.floor(Math.random() * 10)
+        },
+        resetData(state, action) {
+            state.startTime = null
+            state.num1 = Math.floor(Math.random() * 10)
+            state.num2 = Math.floor(Math.random() * 10)
+            state.history = []
+            state.limit = null
         }
     }
 })
 
 export const {
-    setTimer,
-    numpadPressed
+    startTest,
+    numpadPressed,
+    resetData
 } = dataSlice.actions
 export default dataSlice.reducer
